@@ -18,6 +18,9 @@ function App() {
       }))
   }
 
+  const toggleState = useSelector(state => state.toggle)
+  console.log(toggleState)
+
   const removeCharacter = (characterD)=> {
     const newCharacterList = characters.filter(character => character !== characterD)
     dispatch({
@@ -26,7 +29,7 @@ function App() {
     })
   }
 
-  const toggle = () => {
+  const change = () => {
     dispatch({
       type: "TOGGLE"
     })
@@ -41,8 +44,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello World!</h1>
-      <CharacterContainer characters={characters} removeCharacter={removeCharacter} toggle={toggle}/>
+      <CharacterContainer characters={characters} removeCharacter={removeCharacter} change={change} toggleState={toggleState}/>
     </div>
   );
 }

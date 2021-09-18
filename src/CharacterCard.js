@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function characterCard({character, removeCharacter, toggle}) {
+export default function characterCard({character, removeCharacter, change, toggleState}) {
     console.log(character.name)
     const handleRemove = (event) => {
         event.preventDefault()
@@ -8,16 +8,16 @@ export default function characterCard({character, removeCharacter, toggle}) {
     }
 
     const handleClick = () => {
-        toggle()
+        change()
     }
 
 
     return (
-        <div className={toggle ? "red" : "blue"}>
+        <div >
             <h1>{character.name}</h1>
             <img key={character.id} src={character.image} alt={character.name} width={200} height={200}/>
-            <h3 onClick={handleRemove}>Remove Character</h3>
-            <button onClick={handleClick}>{toggle ? "ON" : "OFF"} </button>
+            <h3 onClick={handleRemove} className={toggleState ? "red" : "blue"}>Remove Character</h3>
+            <button onClick={handleClick}>{toggleState ? "ON" : "OFF"} </button>
         </div>
     )
 }

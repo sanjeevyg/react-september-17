@@ -23,7 +23,7 @@ exports.character = (state=[], action) => {
 
 exports.toggle = (state=true, action) => {
   switch(action.type) {
-    case "Toggle":
+    case "TOGGLE":
       return !state
     default:
       return true
