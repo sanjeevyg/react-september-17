@@ -18,6 +18,20 @@ function App() {
       }))
   }
 
+  const removeCharacter = (characterD)=> {
+    const newCharacterList = characters.filter(character => character !== characterD)
+    dispatch({
+      type: "DELETE_CHARACTER",
+      newCharacterList: newCharacterList
+    })
+  }
+
+  const toggle = () => {
+    dispatch({
+      type: "TOGGLE"
+    })
+  }
+
 
   useEffect(getCharacter, [])
 
@@ -28,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <h1>Hello World!</h1>
-      <CharacterContainer characters={characters}/>
+      <CharacterContainer characters={characters} removeCharacter={removeCharacter} toggle={toggle}/>
     </div>
   );
 }

@@ -14,10 +14,19 @@ exports.character = (state=[], action) => {
   switch(action.type) {
     case "GET_CHARACTERS":
       return action.characters
-    case "DELETE_CHARACTERS":
-      return state
+    case "DELETE_CHARACTER":
+      return action.newCharacterList
     default: 
       return state
+  }
+}
+
+exports.toggle = (state=true, action) => {
+  switch(action.type) {
+    case "Toggle":
+      return !state
+    default:
+      return true
   }
 }
 

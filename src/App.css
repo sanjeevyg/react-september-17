@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+
+.red h3 {
+  color: red;
+}
+
+.blue h3 {
+  color: blue;
+}

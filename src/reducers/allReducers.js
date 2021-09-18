@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
-import {count, character} from '.';
+import {count, character, toggle} from '.';
 
 export const allReducers = combineReducers({
     count: count, 
-    character: character})
+    character: character,
+    toggle: toggle
+})
 
 
 
