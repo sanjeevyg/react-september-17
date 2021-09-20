@@ -9,7 +9,7 @@ function App() {
   const dispatch = useDispatch()
 
   const characters = useSelector(state => state.character)
-  console.log(characters)
+  const count = useSelector(state => state.count) 
 
   const getCharacter = () => {
     fetch('https://rickandmortyapi.com/api/character/?page=7')
@@ -18,7 +18,6 @@ function App() {
   }
 
   const toggleState = useSelector(state => state.toggle)
-  console.log(toggleState)
 
   const removeCharacter = (characterD)=> {
     const newCharacterList = characters.filter(character => character !== characterD)
@@ -29,15 +28,23 @@ function App() {
     dispatch(TOGGLE())
   }
 
-
-  useEffect(getCharacter, [])
-
-  console.log(characters)
+  const increaseCount = () => {
+    const nr = 5
+    dispatch(INCREMENT(nr))
+  } 
   
-
+  const decreaseCount = () => {
+    const nr = 1
+    dispatch(DECREMENT(nr))
+  } 
+  
+  useEffect(getCharacter, [])
 
   return (
     <div className="App">
+      <button onClick={increaseCount}>INCREASE</button>
+      <h1>{count}</h1>
+      <button onClick={decreaseCount}>DECREASE</button>
       <CharacterContainer characters={characters} removeCharacter={removeCharacter} change={change} toggleState={toggleState}/>
     </div>
   );

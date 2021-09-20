@@ -1,10 +1,11 @@
-exports.INCREMENT = (n) => {return {
+exports.INCREMENT = (nr) => {return {
     type: "INCREMENT",
-    payload: n
+    increase: nr
 }}
 
-exports.DECREMENT = () => {return {
-    type: "DECREMENT"
+exports.DECREMENT = (nr) => {return {
+    type: "DECREMENT",
+    decrease: nr
 }}
 
 exports.GET_CHARACTERS = (character) => {return {

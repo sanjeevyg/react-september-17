@@ -1,4 +1,5 @@
 import {INCREMENT, DECREMENT, DELETE_CHARACTER, GET_CHARACTERS, TOGGLE} from '../actions';
+console.log(INCREMENT())
 console.log(GET_CHARACTERS())
 
 //REVISIT NOTE: If exports.count is used to export while importing something from different file it gives error.
@@ -6,10 +7,10 @@ console.log(GET_CHARACTERS())
 export const count = (state=0, action) => {
     switch(action.type) {
       case INCREMENT().type:
-        return state + 1
+        return state + action.increase
       case DECREMENT().type:
-        return state - 1
-      default: 
+        return state - action.decrease
+      default:
         return state
     }
   }
