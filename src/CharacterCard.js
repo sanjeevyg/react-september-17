@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function characterCard({character, removeCharacter, change, toggleState}) {
-    console.log(character.name)
+
     const handleRemove = (event) => {
         event.preventDefault()
         removeCharacter(character)
@@ -10,7 +10,6 @@ export default function characterCard({character, removeCharacter, change, toggl
     const handleClick = () => {
         change()
     }
-
 
     return (
         <div >
