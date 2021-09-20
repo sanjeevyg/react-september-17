@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import {count, character, toggle} from '.';
+import {count, character, toggle} from './';
 
 export const allReducers = combineReducers({
     count: count, 

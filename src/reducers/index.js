@@ -1,29 +1,33 @@
+import {INCREMENT, DECREMENT, DELETE_CHARACTER, GET_CHARACTERS, TOGGLE} from '../actions';
+console.log(GET_CHARACTERS())
 
-exports.count = (state=0, action) => {
+//REVISIT NOTE: If exports.count is used to export while importing something from different file it gives error.
+
+export const count = (state=0, action) => {
     switch(action.type) {
-      case "INCREASE":
+      case INCREMENT().type:
         return state + 1
-      case "DECREASE":
+      case DECREMENT().type:
         return state - 1
       default: 
         return state
     }
   }
   
-exports.character = (state=[], action) => {
+export const character = (state=[], action) => {
   switch(action.type) {
-    case "GET_CHARACTERS":
+    case GET_CHARACTERS().type:
       return action.characters
-    case "DELETE_CHARACTER":
+    case DELETE_CHARACTER().type:
       return action.newCharacterList
     default: 
       return state
   }
 }
 
-exports.toggle = (state=true, action) => {
+export const toggle = (state=true, action) => {
   switch(action.type) {
-    case "TOGGLE":
+    case TOGGLE().type:
       return !state
     default:
       return true
