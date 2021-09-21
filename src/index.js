@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {createStore} from 'redux';
-import {useStore, Provider} from 'react-redux';
-import {allReducers} from './reducers/allReducers';
+import { createStore } from 'redux';
+import { useStore, Provider } from 'react-redux';
+import { allReducers } from './reducers/allReducers';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 const store = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())

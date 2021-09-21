@@ -8,7 +8,7 @@ export default function Home() {
     const count = useSelector(state => state.count)
     
     const increaseCount = () => {
-        const nr = 5
+        const nr = 1
         dispatch(INCREMENT(nr))
       } 
       
