@@ -4,8 +4,9 @@ import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import CharacterContainer from '../CharacterContainer';
 import {GET_CHARACTERS, DELETE_CHARACTER, TOGGLE} from '../actions';
+import { Link } from 'react-router-dom';
 
-export default function Home() {
+export default function Home(props) {
     const dispatch = useDispatch()
     const characters = useSelector(state => state.character)
 
@@ -26,11 +27,19 @@ export default function Home() {
       dispatch(TOGGLE())
     }
 
+    const handleClick = (event) => {
+        event.preventDefault()
+        props.history.push("/about")
+    }
+
     useEffect(getCharacter, [])
 
     return (
         <div className="App">
-         <CharacterContainer characters={characters} removeCharacter={removeCharacter} change={change} toggleState={toggleState}/>
+            <button onClick={handleClick}>About</button>
+            <Link to="/counter">Counter</Link>
+            <Link to="/SumoForm">Sumo Form</Link>
+            <CharacterContainer characters={characters} removeCharacter={removeCharacter} change={change} toggleState={toggleState}/>
         </div>
     )
 }
