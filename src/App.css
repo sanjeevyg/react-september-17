@@ -48,18 +48,27 @@
 
 .Sumo-Card {
   display: grid;
+  grid-row: inherit;
   /* flex-direction: column; */
   text-align: center;
   background-color: sandybrown;
   width: 150px;
   height: 150px;
   margin: 15px;
-  margin-left: 200px;
   border-radius: 1em;
+
   box-shadow: 10px 5px 5px rgb(206, 148, 106);
   /* padding: 0; */
 }
 
 .Sumo-Info {
   font-family: cursive;
+}
+
+.card-container {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }

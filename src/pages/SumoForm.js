@@ -31,20 +31,21 @@ export default function SumoForm(props) {
 
 
     const renderSumo = () => sumos.map(sumo => {return (
-        <div className="Sumo-Card">
-            <h4>{sumo.name}</h4>
-            <div className="Sumo-Info">
-                <div>{sumo.weight}</div>
-                <div>{sumo.age}</div>
-                <div>{sumo.heya.name}</div>
+
+            <div className="Sumo-Card">
+                <h4>{sumo.name}</h4>
+                <div className="Sumo-Info">
+                    <div>{sumo.weight}</div>
+                    <div>{sumo.age}</div>
+                    <div>{sumo.heya.name}</div>
+                </div>
             </div>
-        </div>
     )})
 
 
     return (
         <div>
-            <div>{renderSumo()}</div>
+            <div className="card-container">{renderSumo()}</div>
             {/* <form>
                 <input>
                     Name
