@@ -6,7 +6,7 @@ export default function UseQote(initialCount) {
     const [quote, setQuote] = useState('')
 
 
-    const quoteURL = `https://web-series-quotes.herokuapp.com/generate/gameofthrones/${count}/image?src=gameofthrones&size=150&color=lightyellow`
+    const quoteURL = `https://web-series-quotes.herokuapp.com/generate/moneyheist/${count}/image?src=moneyheist&size=150&color=lightyellow`
 
     const increase = () => setCount(count + 1)
     const decrease = () => setCount(count - 1)

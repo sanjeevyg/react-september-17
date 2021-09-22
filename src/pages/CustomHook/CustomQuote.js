@@ -11,9 +11,13 @@ export default function CustomQuote() {
     return (
         <div className="quote">
             <h1>Count: {count}</h1>
-            <button onClick={increase}>Increase</button>
-            <button onClick={decrease}>Decrease</button>
-            <img src={quote} alt={quote} width="900" height="400"/>
+            <div className="imageButton">
+                <button onClick={increase}>Increase</button>
+                <button onClick={decrease}>Decrease</button>
+            </div>
+            <div className="quoteBackground">
+                <img src={quote} alt={quote} width="700" height="400"/>
+            </div>
         </div>
     )
 }

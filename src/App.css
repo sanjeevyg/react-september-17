@@ -83,6 +83,25 @@
   margin: 1em;
 }
 
-.quote {
+.quote h1 {
   text-align: center;
+}
+
+/* .quote img {
+  text-align: center;
+  align-items: center;
+  margin: 3em;
+} */
+
+
+.quoteBackground {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.imageButton {
+  text-align: center;
+}
+.imageButton button {
+  margin: 3px;
 }
