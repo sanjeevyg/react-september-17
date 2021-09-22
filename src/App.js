@@ -6,6 +6,7 @@ import About from './pages/About';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 import SumoForm from './pages/SumoForm';
+import CustomHook from './pages/CustomHook/CustomQuote';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <Route exact path="/about"> 
         <About/>
       </Route>
+      <Route exact path="/quote" render={(routerProps) => <CustomHook {...routerProps} />}/>
       <Route exact path='/SumoForm' render={(routerProps) => <SumoForm {...routerProps}/>}/>
       <PrivateRoute exact path="/profile" component={Profile} name="Yogi"/>
     </Switch>

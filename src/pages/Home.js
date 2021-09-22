@@ -32,11 +32,17 @@ export default function Home(props) {
         props.history.push("/about")
     }
 
+    const handleQuote = (event) => {
+      event.preventDefault()
+      props.history.push("/quote")
+    }
+
     useEffect(getCharacter, [])
 
     return (
         <div className="App">
             <button onClick={handleClick}>About</button>
+            <button onClick={handleQuote}> Quotes </button>
             <Link to="/counter">Counter</Link>
             <Link to="/SumoForm">Sumo Form</Link>
             <CharacterContainer characters={characters} removeCharacter={removeCharacter} change={change} toggleState={toggleState}/>

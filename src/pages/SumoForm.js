@@ -35,9 +35,9 @@ export default function SumoForm(props) {
             <div className="Sumo-Card">
                 <h4>{sumo.name}</h4>
                 <div className="Sumo-Info">
-                    <div>{sumo.weight}</div>
-                    <div>{sumo.age}</div>
-                    <div>{sumo.heya.name}</div>
+                    <div>Weight: {sumo.weight}</div>
+                    <div>Age: {sumo.age}</div>
+                    <div>Heya: {sumo.heya.name}</div>
                 </div>
             </div>
     )})
@@ -49,13 +49,40 @@ export default function SumoForm(props) {
     )
     })
 
+    const handleClick = (event) => {
+        event.preventDefault()
+        const bodyInfo = {
+            name, age, weight, heya_id: selectedHeya
+        }
+
+        const option = {
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+            },
+            method: "POST",
+            body: JSON.stringify(bodyInfo)
+        }
+
+        fetch("http://localhost:3000/sumos", option)
+            .then(response => response.json())
+            .then(addSumo)
+    }
+
+    const addSumo = (newSumo) => {
+        const newSumoList = [...sumos, newSumo]
+        setSumos(newSumoList)
+    }
+
+
+
 
     return (
         <div>
             <div className="card-container">{renderSumo()}</div>
 
-            <form>
-                <label htmlFor="name">Name </label>
+            <form className="sumo-form" onSubmit={handleClick}>
+                <label htmlFor="name">Name:</label>
                 <input 
                     id="name" 
                     type="text" 
@@ -64,7 +91,7 @@ export default function SumoForm(props) {
                     onChange={(event) => setName(event.target.value)}
                 />
 
-             <label htmlFor="weight">Weight</label>
+             <label htmlFor="weight">Weight:</label>
                 <input 
                     id="weight" 
                     type="number" 
@@ -74,7 +101,7 @@ export default function SumoForm(props) {
                     onChange={(event) => setWeight(event.target.value)}
                 />
 
-                <label htmlFor="age">Age</label>
+                <label htmlFor="age">Age:</label>
                 <input 
                     id="age" 
                     type="number" 

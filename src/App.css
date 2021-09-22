@@ -70,3 +70,19 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+.sumo-form {
+  text-align: center;
+}
+
+.sumo-form label {
+  padding: 1em;
+}
+
+#sumo-heya {
+  margin: 1em;
+}
+
+.quote {
+  text-align: center;
+}
