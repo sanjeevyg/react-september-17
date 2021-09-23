@@ -1,7 +1,7 @@
 import '../App.css';
 import React from 'react';
-import {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import CharacterContainer from '../CharacterContainer';
 import {GET_CHARACTERS, DELETE_CHARACTER, TOGGLE} from '../actions';
 import { Link } from 'react-router-dom';
