@@ -7,7 +7,6 @@ import React from 'react'
 export default function CustomQuote() {
 
     const [count, increase, decrease, quote] = useQuote(1)
-    console.log({count})
     return (
         <div className="quote">
             <h1>Count: {count}</h1>
