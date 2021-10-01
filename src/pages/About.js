@@ -5,6 +5,7 @@ export default function About() {
         <div>
             <h1>Ganjo</h1>
             <h1>Ganjo</h1>
+            <h1>Ganjo</h1>
         </div>
     )
 }
