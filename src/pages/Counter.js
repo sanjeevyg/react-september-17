@@ -20,7 +20,7 @@ export default function Home() {
     return (
         <div>
           <button onClick={increaseCount}>INCREASE</button>
-          <h1>{count}</h1>
+          <h2>{count}</h2>
           <button onClick={decreaseCount}>DECREASE</button>
         </div>
     )
