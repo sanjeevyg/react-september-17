@@ -13,7 +13,7 @@ export default function Home() {
       } 
       
       const decreaseCount = () => {
-        const nr = 1
+        const nr = 2
         dispatch(DECREMENT(nr))
       }
 
